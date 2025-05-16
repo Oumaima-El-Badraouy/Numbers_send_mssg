@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Envoyer Message WhatsApp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #e9ecef;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background-color: #075e54;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .navbar nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar nav a:hover {
+      color: #25d366;
+    }
+
+    /* ===== MAIN CONTAINER ===== */
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 550px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #075e54;
+      font-size: 26px;
+    }
+
+    form div {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1ebc59;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar nav {
+        margin-top: 10px;
+      }
+
+      .container {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === NAVBAR === -->
+  <header class="navbar">
+    <h2>WhatsApp Sender</h2>
+   
+  </header>
+
+  <!-- === MAIN SECTION === -->
+  <main class="main">
+    <div class="container">
+      <h1>📤 Envoyer un message WhatsApp</h1>
+      <form action="/send-messages" method="POST" enctype="multipart/form-data">
+        <div>
+          <label for="file">📁 Fichier Excel (colonne "Numero") :</label>
+          <input type="file" id="file" name="file" accept=".xlsx,.xls" required />
+        </div>
+        <div>
+          <label for="message">💬 Message à envoyer :</label>
+          <textarea id="message" name="message" rows="4" placeholder="Écris ton message ici..." required></textarea>
+        </div>
+        <div>
+          <button type="submit">Envoyer les messages</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>
