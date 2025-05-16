@@ -145,19 +145,13 @@
   <main class="main">
     <div class="container">
       <h1>📤 Envoyer un message WhatsApp</h1>
-      <form action="/send-messages" method="POST" enctype="multipart/form-data">
-        <div>
-          <label for="file">📁 Fichier Excel (colonne "Numero") :</label>
-          <input type="file" id="file" name="file" accept=".xlsx,.xls" required />
-        </div>
-        <div>
-          <label for="message">💬 Message à envoyer :</label>
-          <textarea id="message" name="message" rows="4" placeholder="Écris ton message ici..." required></textarea>
-        </div>
-        <div>
-          <button type="submit">Envoyer les messages</button>
-        </div>
-      </form>
+     <form action="/send-messages" method="POST" enctype="multipart/form-data"> 
+    <label for="file">Fichier Excel (.xlsx) avec une colonne "Numero" :</label><br>
+    <input type="file" name="file" accept=".xlsx" required><br><br>
+    <label for="message">Message :</label>
+    <textarea name="message" rows="5" cols="50" required></textarea>
+    <button type="submit">Envoyer les messages</button>
+  </form>
     </div>
   </main>
 
